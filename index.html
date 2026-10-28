@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mely Alanis | Melidan Academy</title>
+  
+  <link rel="icon" type="image/png" href="./img1.png">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
+    
+    body { 
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #FAF8F5;
+      color: #0F2537;
+    }
+
+    h1, h2, h3, .font-display {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+
+    .rotate-sticker-left { transform: rotate(-2deg); }
+    .rotate-sticker-right { transform: rotate(2deg); }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease-out, padding 0.35s ease;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 350px;
+      padding-top: 0.85rem;
+    }
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+  </style>
+</head>
+<body class="min-h-screen overflow-x-hidden">
+
+  <section class="w-full bg-[#FAF8F5] px-6 py-12 md:py-20 flex justify-center relative">
+    <div class="absolute top-10 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#1F8A65]/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="w-full max-w-4xl flex flex-col items-center text-center space-y-6 relative z-10">
+      
+      <div class="relative">
+        <div class="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-white shadow-xl shadow-blue-950/10 p-1 bg-white">
+          <img 
+            id="profile-img"
+            src="./img1.png" 
+            alt="Mely Alanis" 
+            class="w-full h-full object-cover rounded-full"
+            onerror="handleImageError(this)"
+          >
+        </div>
+        <span class="absolute -bottom-1 -right-1 bg-white px-3 py-1 rounded-full text-xs md:text-sm font-bold shadow-md border border-slate-200 text-[#0A3B7A] rotate-sticker-right">
+          🇮🇪 Dublín
+        </span>
+      </div>
+
+      <div class="space-y-3 max-w-2xl">
+        <span class="inline-block px-4 py-1.5 bg-[#E8F3EE] text-[#1F8A65] text-xs font-extrabold uppercase tracking-widest rounded-full border border-[#1F8A65]/20">
+          MELIDAN ACADEMY
+        </span>
+        
+        <h1 class="text-3xl md:text-5xl font-bold text-[#0A3B7A] leading-tight tracking-tight italic">
+          Lleva tu carrera al siguiente nivel bilingüe.
+        </h1>
+        
+        <p class="text-xs md:text-base text-slate-600 leading-relaxed font-medium pt-1">
+          Pasa tus entrevistas técnicas en inglés y postula con confianza a multinacionales. Domina el vocabulario clave, optimiza tu CV para filtros ATS y supera el miedo a hablar en reuniones de trabajo.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-2.5 pt-2">
+        <span class="px-4 py-2 bg-white text-[#0A3B7A] rounded-full text-xs md:text-sm font-bold border border-slate-200 shadow-sm rotate-sticker-left">
+          ⚙️ Ingeniera
+        </span>
+        <span class="px-4 py-2 bg-[#EBF2FA] text-[#0A3B7A] rounded-full text-xs md:text-sm font-bold border border-[#0A3B7A]/20 shadow-sm">
+          🎓 MSc @ Trinity College Dublin
+        </span>
+        <span class="px-4 py-2 bg-[#E8F3EE] text-[#1F8A65] rounded-full text-xs md:text-sm font-bold border border-[#1F8A65]/20 shadow-sm rotate-sticker-right">
+          🗣️ Lingüista
+        </span>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="w-full bg-[#FAF8F5] px-6 pb-12 md:pb-16 flex justify-center">
+    <div class="w-full max-w-4xl">
+      <div class="bg-white border border-slate-200 rounded-[32px] p-8 md:p-12 shadow-md flex flex-col md:flex-row items-center gap-8">
+        
+        <div class="w-36 h-36 md:w-48 md:h-48 rounded-2xl overflow-hidden border-2 border-[#1F8A65]/20 shadow-md flex-shrink-0">
+          <img 
+            src="./img2.jpg" 
+            alt="Mely Alanis en Dublín" 
+            class="w-full h-full object-cover"
+            onerror="this.onerror=null; this.src='./img1.png';"
+          >
+        </div>
+
+        <div class="space-y-4 text-left">
+          <span class="inline-block px-3 py-1 bg-[#E8F3EE] text-[#1F8A65] text-[11px] font-bold uppercase tracking-wider rounded-full">
+            SOBRE MÍ
+          </span>
+          <h2 class="text-2xl md:text-3xl font-bold text-[#0A3B7A]">¡Hola! Soy Mely 👋</h2>
+          <p class="text-xs md:text-sm text-slate-600 leading-relaxed font-medium">
+            Soy ingeniera, lingüista y estudiante de maestría en Trinity College Dublin. Mi objetivo con Melidan Academy es ayudarte a romper la barrera del idioma en entornos corporativos internacionales, brindándote herramientas estratégicas y sin perder tiempo en teoría innecesaria.
+          </p>
+
+          <div class="pt-2 flex flex-wrap gap-2.5">
+            <span class="px-3.5 py-1.5 bg-[#EBF2FA] text-[#0A3B7A] rounded-xl text-xs font-bold border border-[#0A3B7A]/15 flex items-center gap-1.5">
+              <span>🇬🇧</span> <span>C1 IELTS Certified</span>
+            </span>
+            <span class="px-3.5 py-1.5 bg-[#E8F3EE] text-[#1F8A65] rounded-xl text-xs font-bold border border-[#1F8A65]/20 flex items-center gap-1.5">
+              <span>🇮🇹</span> <span>PLIDA B2 Certified</span>
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="w-full bg-[#E8F3EE] border-y border-[#1F8A65]/20 px-6 py-12 md:py-20 flex justify-center">
+    <div class="w-full max-w-4xl">
+      
+      <div class="bg-white border border-[#1F8A65]/20 rounded-[32px] p-8 md:p-12 shadow-xl shadow-emerald-950/5 relative">
+        <span class="absolute -top-3.5 left-8 px-4 py-1 bg-[#1F8A65] text-white text-xs font-bold tracking-wider rounded-full shadow-md">
+          PUNTO DE PARTIDA
+        </span>
+
+        <h2 class="text-2xl md:text-4xl font-bold text-[#0A3B7A] mb-8 pt-2">Esto es para ti si...</h2>
+        
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-5 text-xs md:text-sm font-medium text-slate-700 leading-relaxed">
+          <li class="flex items-start space-x-3 bg-[#FAF8F5] p-4 rounded-2xl border border-slate-100 shadow-sm">
+            <span class="text-base text-[#1F8A65] font-bold">✓</span>
+            <span>Tienes un perfil técnico sólido pero te congelas al hablar en reuniones o entrevistas en inglés.</span>
+          </li>
+          <li class="flex items-start space-x-3 bg-[#FAF8F5] p-4 rounded-2xl border border-slate-100 shadow-sm">
+            <span class="text-base text-[#1F8A65] font-bold">✓</span>
+            <span>Tradujiste tu CV palabra por palabra y los filtros automáticos (ATS) rechazan tu postulación.</span>
+          </li>
+          <li class="flex items-start space-x-3 bg-[#FAF8F5] p-4 rounded-2xl border border-slate-100 shadow-sm">
+            <span class="text-base text-[#1F8A65] font-bold">✓</span>
+            <span>Quieres aplicar a vacantes remotas en USD/EUR o a maestrías en Europa y el IELTS o la fluidez te frenan.</span>
+          </li>
+          <li class="flex items-start space-x-3 bg-[#FAF8F5] p-4 rounded-2xl border border-slate-100 shadow-sm">
+            <span class="text-base text-[#1F8A65] font-bold">✓</span>
+            <span>Buscas un método asíncrono, directo y estratégico sin perder meses en academias tradicionales.</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="w-full bg-[#EBF2FA] px-6 py-12 md:py-20 flex justify-center border-b border-[#0A3B7A]/15">
+    <div class="w-full max-w-4xl space-y-8">
+      
+      <div class="text-center">
+        <span class="text-xs md:text-sm font-extrabold uppercase tracking-widest text-[#0A3B7A]/70">LANZAMIENTO DICIEMBRE</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-[#0A3B7A] mt-1">Nuestros Programas</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <a href="#modal-free-kit" onclick="openModal('modal-free-kit')" class="block bg-[#E8F3EE] hover:bg-[#d8ebd2] border border-[#1F8A65]/30 p-6 rounded-[26px] transition-all transform hover:-translate-y-1 shadow-md">
+          <div class="flex items-center justify-between">
+            <div class="text-left pr-2">
+              <span class="inline-block px-3 py-0.5 bg-[#1F8A65] text-white text-[10px] font-bold tracking-wider rounded-full mb-2">GRATIS</span>
+              <span class="block text-lg font-bold text-[#0A3B7A]">Kit de CV ATS + Guía STAR</span>
+              <span class="block text-xs text-slate-500 mt-1 font-medium">Plantilla editable en Word/Notion + Guía PDF</span>
+            </div>
+            <span class="text-2xl font-bold text-[#1F8A65] flex-shrink-0">+</span>
+          </div>
+        </a>
+
+        <button onclick="openWaitlistModal('Tech Resume & STAR Guide')" class="w-full text-left bg-white hover:bg-[#FAF8F5] border border-slate-200 p-6 rounded-[26px] transition-all transform hover:-translate-y-1 shadow-md cursor-pointer">
+          <div class="flex items-center justify-between">
+            <div class="pr-2">
+              <span class="inline-block px-3 py-0.5 bg-amber-100 text-amber-800 text-[10px] font-extrabold tracking-wider rounded-full mb-2">DISPONIBLE PRONTO</span>
+              <span class="block text-lg font-bold text-[#0A3B7A]">Tech Resume & STAR Guide</span>
+              <span class="block text-xs text-slate-500 mt-1 font-medium">+100 verbos de acción y scripts de entrevista</span>
+            </div>
+            <span class="text-sm font-extrabold bg-[#0A3B7A] text-white px-4 py-2 rounded-full flex-shrink-0">37 €</span>
+          </div>
+        </button>
+
+        <button onclick="openWaitlistModal('Corporate English Accelerator')" class="w-full text-left bg-white hover:bg-[#FAF8F5] border border-slate-200 p-6 rounded-[26px] transition-all transform hover:-translate-y-1 shadow-md cursor-pointer">
+          <div class="flex items-center justify-between">
+            <div class="pr-2">
+              <span class="inline-block px-3 py-0.5 bg-amber-100 text-amber-800 text-[10px] font-extrabold tracking-wider rounded-full mb-2">DISPONIBLE PRONTO</span>
+              <span class="block text-lg font-bold text-[#0A3B7A]">Corporate English Accelerator</span>
+              <span class="block text-xs text-slate-500 mt-1 font-medium">Módulos de reuniones, presentaciones y entrevistas</span>
+            </div>
+            <span class="text-sm font-extrabold bg-[#0A3B7A] text-white px-4 py-2 rounded-full flex-shrink-0">147 €</span>
+          </div>
+        </button>
+
+        <button onclick="openWaitlistModal('Mentoría VIP 1:1 (Career Accelerator)')" class="w-full text-left bg-[#0A3B7A] hover:bg-[#082e60] text-white p-6 rounded-[26px] transition-all transform hover:-translate-y-1 shadow-xl cursor-pointer">
+          <div class="flex items-center justify-between">
+            <div class="pr-2">
+              <span class="inline-block px-3 py-0.5 bg-[#E8F3EE] text-[#1F8A65] text-[10px] font-extrabold rounded-full mb-2">CUPOS PARA DICIEMBRE</span>
+              <span class="block text-lg font-extrabold text-white leading-tight">Mentoría VIP 1:1 (Career Accelerator)</span>
+              <span class="block text-xs text-blue-100/80 mt-1 font-normal">2 llamadas en vivo (Zoom) + Optimización de CV</span>
+            </div>
+            <span class="text-sm font-extrabold bg-white text-[#0A3B7A] px-4 py-2 rounded-full flex-shrink-0">397 €</span>
+          </div>
+        </button>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="w-full bg-[#FAF8F5] px-6 py-12 md:py-20 flex justify-center">
+    <div class="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <div class="bg-white border border-slate-200 rounded-[28px] p-8 shadow-sm">
+        <span class="inline-block px-3 py-1 bg-slate-200 text-slate-700 text-xs font-bold rounded-full mb-4">ANTES</span>
+        <ul class="text-xs md:text-sm font-medium text-slate-600 space-y-3 leading-relaxed">
+          <li>• Muchas ideas pero cero estructura al hablar inglés.</li>
+          <li>• Miedo a tomar la palabra en reuniones de Teams/Zoom.</li>
+          <li>• Traducir literalmente sin impactar al reclutador.</li>
+        </ul>
+      </div>
+
+      <div class="bg-[#E8F3EE] border border-[#1F8A65]/30 rounded-[28px] p-8 shadow-sm">
+        <span class="inline-block px-3 py-1 bg-[#1F8A65] text-white text-xs font-extrabold rounded-full mb-4">DESPUÉS DE NUESTRO MÉTODO</span>
+        <ul class="text-xs md:text-sm font-bold text-[#0A3B7A] space-y-3 leading-relaxed">
+          <li>• CV adaptado al sistema ATS de multinacionales.</li>
+          <li>• Respuestas preparadas con el método STAR técnico.</li>
+          <li>• Seguridad total para entrevistas y negociación salarial.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="w-full bg-[#0A3B7A] text-white px-6 py-16 flex justify-center">
+    <div class="w-full max-w-3xl">
+      
+      <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-10">Preguntas Frecuentes</h2>
+
+      <div class="space-y-4">
+        
+        <div class="faq-item bg-[#FAF8F5] text-[#0A3B7A] rounded-[24px] p-6 cursor-pointer" onclick="toggleFaq(this)">
+          <div class="flex justify-between items-center">
+            <span class="text-xs md:text-sm font-bold text-[#0A3B7A] pr-3">¿Necesito un nivel de inglés avanzado para tomar el curso?</span>
+            <span class="faq-icon text-lg font-bold text-[#0A3B7A] flex-shrink-0">+</span>
+          </div>
+          <div class="faq-answer text-xs md:text-sm text-slate-600 font-medium leading-relaxed">
+            No. El programa está diseñado para profesionales con un nivel de inglés intermedio (B1/B2) que ya tienen bases en el idioma pero sienten fricción, falta de estructura o temor al hablar en reuniones y entrevistas. Nuestro enfoque es darte las estructuras de comunicación, el vocabulario técnico clave y la seguridad para expresarte con impacto.
+          </div>
+        </div>
+
+        <div class="faq-item bg-[#FAF8F5] text-[#0A3B7A] rounded-[24px] p-6 cursor-pointer" onclick="toggleFaq(this)">
+          <div class="flex justify-between items-center">
+            <span class="text-xs md:text-sm font-bold text-[#0A3B7A] pr-3">¿Cuándo y cómo tengo acceso al contenido?</span>
+            <span class="faq-icon text-lg font-bold text-[#0A3B7A] flex-shrink-0">+</span>
+          </div>
+          <div class="faq-answer text-xs md:text-sm text-slate-600 font-medium leading-relaxed">
+            El acceso es inmediato tras completar tu inscripción. Recibirás un correo con tus credenciales para ingresar a la plataforma digital, donde podrás acceder a todos los módulos grabados, plantillas descargables y guías de trabajo a tu propio ritmo.
+          </div>
+        </div>
+
+        <div class="faq-item bg-[#FAF8F5] text-[#0A3B7A] rounded-[24px] p-6 cursor-pointer" onclick="toggleFaq(this)">
+          <div class="flex justify-between items-center">
+            <span class="text-xs md:text-sm font-bold text-[#0A3B7A] pr-3">¿Cómo funciona la mentoría VIP 1:1?</span>
+            <span class="faq-icon text-lg font-bold text-[#0A3B7A] flex-shrink-0">+</span>
+          </div>
+          <div class="faq-answer text-xs md:text-sm text-slate-600 font-medium leading-relaxed">
+            Una vez dentro de la plataforma, tendrás un enlace directo para agendar tus sesiones individuales según tu disponibilidad. En estas sesiones trabajamos de forma personalizada en la optimización de tu CV para sistemas ATS, simulacros de entrevista con el método STAR y corrección de fluidez en tiempo real.
+          </div>
+        </div>
+
+        <div class="faq-item bg-[#FAF8F5] text-[#0A3B7A] rounded-[24px] p-6 cursor-pointer" onclick="toggleFaq(this)">
+          <div class="flex justify-between items-center">
+            <span class="text-xs md:text-sm font-bold text-[#0A3B7A] pr-3">¿Cuánto tiempo necesito dedicarle a la semana?</span>
+            <span class="faq-icon text-lg font-bold text-[#0A3B7A] flex-shrink-0">+</span>
+          </div>
+          <div class="faq-answer text-xs md:text-sm text-slate-600 font-medium leading-relaxed">
+            Recomendamos dedicar entre 2 y 4 horas semanales. El contenido está estructurado en lecciones al grano para que puedas combinarlo fácilmente con tu rutina laboral sin abrumarte.
+          </div>
+        </div>
+
+        <div class="faq-item bg-[#FAF8F5] text-[#0A3B7A] rounded-[24px] p-6 cursor-pointer" onclick="toggleFaq(this)">
+          <div class="flex justify-between items-center">
+            <span class="text-xs md:text-sm font-bold text-[#0A3B7A] pr-3">¿Qué métodos y facilidades de pago aceptan?</span>
+            <span class="faq-icon text-lg font-bold text-[#0A3B7A] flex-shrink-0">+</span>
+          </div>
+          <div class="faq-answer text-xs md:text-sm text-slate-600 font-medium leading-relaxed">
+            Aceptamos tarjetas de crédito, débito y pagos procesados de forma segura mediante Stripe o PayPal. Puedes diferir tu pago en cuotas según las facilidades de tu banco emisor. Al tratarse de un programa de acceso inmediato a los recursos digitales y cupos limitados de mentoría personalizada, te invitamos a revisar los requisitos de nivel antes de inscribirte.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="bg-[#FAF8F5] py-10 text-center space-y-4 border-t border-slate-200">
+    <div class="flex justify-center space-x-8 text-[#0A3B7A] text-2xl">
+      <a href="https://tiktok.com/@melidanacademy" target="_blank" class="hover:text-[#1F8A65] transition-colors"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="https://instagram.com/melidanacademy" target="_blank" class="hover:text-[#1F8A65] transition-colors"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+    <p class="text-xs font-semibold text-slate-500">© 2026 Mely Alanis · Trinity College Dublin</p>
+  </footer>
+
+  <div id="modal-free-kit" class="hidden fixed inset-0 bg-[#0A3B7A]/60 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+    <div class="bg-[#FAF8F5] border border-slate-200 p-8 rounded-[32px] max-w-md w-full relative text-left shadow-2xl">
+      <button onclick="closeModal('modal-free-kit')" class="absolute top-6 right-6 text-[#0A3B7A] font-bold text-lg">✕</button>
+
+      <span class="inline-block px-3 py-1 bg-[#E8F3EE] text-[#1F8A65] text-xs font-extrabold rounded-full mb-3">GRATIS</span>
+      <h3 class="text-2xl font-bold text-[#0A3B7A] mb-2">Obtén tu Kit Gratuito</h3>
+      <p class="text-xs text-slate-600 mb-6 font-medium leading-relaxed">Ingresa tu correo para enviarte de inmediato la plantilla editable de CV ATS y la guía en PDF del método STAR.</p>
+      
+      <form action="HTTPS_FORM_ENDPOINT" method="POST" class="space-y-4">
+        <input 
+          type="email" 
+          name="email" 
+          placeholder="tu.correo@ejemplo.com" 
+          required 
+          class="w-full px-5 py-3.5 bg-white border border-slate-300 rounded-full text-xs text-[#0A3B7A] placeholder-slate-400 font-medium focus:outline-none focus:border-[#1F8A65]"
+        >
+        <button 
+          type="submit" 
+          class="w-full py-3.5 bg-[#0A3B7A] hover:bg-[#082e60] text-white font-bold text-xs rounded-full transition-colors shadow-md"
+        >
+          ¡Quiero mi Kit Gratuito 🚀!
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div id="modal-waitlist" class="hidden fixed inset-0 bg-[#0A3B7A]/60 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+    <div class="bg-[#FAF8F5] border border-slate-200 p-8 rounded-[32px] max-w-md w-full relative text-center shadow-2xl">
+      <button onclick="closeModal('modal-waitlist')" class="absolute top-6 right-6 text-[#0A3B7A] font-bold text-lg">✕</button>
+
+      <span class="inline-block px-3.5 py-1 bg-amber-100 text-amber-900 text-xs font-extrabold rounded-full mb-3 border border-amber-200">
+        ⏳ APERTURA OFICIAL DICIEMBRE
+      </span>
+      
+      <h3 class="text-2xl font-bold text-[#0A3B7A] mb-1" id="waitlist-product-name">Estamos preparando este programa</h3>
+      <p class="text-xs text-slate-600 mb-6 font-medium">Únete a la lista de espera para asegurar tu cupo con un 20% de descuento de lanzamiento.</p>
+
+      <div class="grid grid-cols-4 gap-2 mb-6">
+        <div class="bg-white p-3 rounded-2xl border border-slate-200 shadow-sm">
+          <span id="timer-days" class="block text-xl font-extrabold text-[#0A3B7A]">00</span>
+          <span class="text-[10px] text-slate-400 font-bold uppercase">Días</span>
+        </div>
+        <div class="bg-white p-3 rounded-2xl border border-slate-200 shadow-sm">
+          <span id="timer-hours" class="block text-xl font-extrabold text-[#0A3B7A]">00</span>
+          <span class="text-[10px] text-slate-400 font-bold uppercase">Horas</span>
+        </div>
+        <div class="bg-white p-3 rounded-2xl border border-slate-200 shadow-sm">
+          <span id="timer-mins" class="block text-xl font-extrabold text-[#0A3B7A]">00</span>
+          <span class="text-[10px] text-slate-400 font-bold uppercase">Min</span>
+        </div>
+        <div class="bg-white p-3 rounded-2xl border border-slate-200 shadow-sm">
+          <span id="timer-secs" class="block text-xl font-extrabold text-[#0A3B7A]">00</span>
+          <span class="text-[10px] text-slate-400 font-bold uppercase">Seg</span>
+        </div>
+      </div>
+
+      <form action="HTTPS_FORM_ENDPOINT" method="POST" class="space-y-3.5 text-left">
+        <input 
+          type="email" 
+          name="email" 
+          placeholder="tu.correo@ejemplo.com" 
+          required 
+          class="w-full px-5 py-3.5 bg-white border border-slate-300 rounded-full text-xs text-[#0A3B7A] placeholder-slate-400 font-medium focus:outline-none focus:border-[#1F8A65]"
+        >
+        <button 
+          type="submit" 
+          class="w-full py-3.5 bg-[#1F8A65] hover:bg-[#186e51] text-white font-bold text-xs rounded-full transition-colors shadow-md"
+        >
+          Unirme a la lista de espera + Descuento 🎁
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function openModal(id) { document.getElementById(id).classList.remove('hidden'); }
+    function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
+
+    function openWaitlistModal(productName) {
+      document.getElementById('waitlist-product-name').innerText = productName;
+      openModal('modal-waitlist');
+    }
+
+    function toggleFaq(element) {
+      element.classList.toggle('active');
+    }
+
+    const launchDate = new Date('December 1, 2026 00:00:00').getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+
+      if (distance > 0) {
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById('timer-days').innerText = days < 10 ? '0' + days : days;
+        document.getElementById('timer-hours').innerText = hours < 10 ? '0' + hours : hours;
+        document.getElementById('timer-mins').innerText = minutes < 10 ? '0' + minutes : minutes;
+        document.getElementById('timer-secs').innerText = seconds < 10 ? '0' + seconds : seconds;
+      }
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    function handleImageError(img) {
+      if (img.src.includes('img1.png')) {
+        img.src = './img1.jpg';
+      } else if (img.src.includes('img1.jpg')) {
+        img.src = './img1.PNG';
+      } else if (img.src.includes('img1.PNG')) {
+        img.src = './img2.jpg';
+      }
+    }
+  </script>
+
+</body>
+</html>
