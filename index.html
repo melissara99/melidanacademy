@@ -3,8 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Melidan Academy</title>
+  <title>Melidan Academy | Inglés Técnico y CV ATS para Profesionales</title>
+  <title>Melidan Academy | Inglés Técnico & CV ATS para Profesionales</title>
   
+  <meta property="og:title" content="Melidan Academy | Lleva tu carrera al siguiente nivel">
+  <meta property="og:description" content="Supera tus entrevistas técnicas en inglés y postula con confianza a multinacionales con nuestro método directo.">
+  <meta property="og:image" content="https://melissara99.github.io/melidanacademy/img1.png">
+  <meta property="og:url" content="https://melissara99.github.io/melidanacademy/">
+  <meta property="og:type" content="website">
+
   <link rel="icon" type="image/png" href="./img1.png">
   
   <script src="https://cdn.tailwindcss.com"></script>
@@ -57,8 +64,8 @@
             onerror="handleImageError(this)"
           >
         </div>
-        <span class="absolute -bottom-1 -right-1 bg-white px-3 py-1 rounded-full text-xs md:text-sm font-bold shadow-md border border-slate-200 text-[#0A3B7A] rotate-sticker-right">
-          Dublín, Ireland
+        <span class="absolute -bottom-1 -right-1 bg-white px-3 py-1 rounded-full text-xs md:text-sm font-bold shadow-md border border-slate-200 text-[#0A3B7A] rotate-sticker-right flex items-center gap-1.5">
+          <i class="fa-solid fa-location-dot text-red-500"></i> Dublín, Ireland
         </span>
       </div>
 
@@ -77,15 +84,24 @@
       </div>
 
       <div class="flex flex-wrap justify-center gap-2.5 pt-2">
-        <span class="px-4 py-2 bg-white text-[#0A3B7A] rounded-full text-xs md:text-sm font-bold border border-slate-200 shadow-sm rotate-sticker-left">
-          ⚙️ Ingeniera Mecánica
+        <span class="px-4 py-2 bg-white text-[#0A3B7A] rounded-full text-xs md:text-sm font-bold border border-slate-200 shadow-sm rotate-sticker-left flex items-center gap-2">
+          <i class="fa-solid fa-gears text-[#1F8A65]"></i> Ingeniera Mecánica
         </span>
-        <span class="px-4 py-2 bg-[#EBF2FA] text-[#0A3B7A] rounded-full text-xs md:text-sm font-bold border border-[#0A3B7A]/20 shadow-sm">
-          🎓 MSc @ Trinity College Dublin
+        <span class="px-4 py-2 bg-[#EBF2FA] text-[#0A3B7A] rounded-full text-xs md:text-sm font-bold border border-[#0A3B7A]/20 shadow-sm flex items-center gap-2">
+          <i class="fa-solid fa-graduation-cap text-[#0A3B7A]"></i> MSc @ Trinity College Dublin
         </span>
-        <span class="px-4 py-2 bg-[#E8F3EE] text-[#1F8A65] rounded-full text-xs md:text-sm font-bold border border-[#1F8A65]/20 shadow-sm rotate-sticker-right">
-          🗣️ Lingüista Aplicada
+        <span class="px-4 py-2 bg-[#E8F3EE] text-[#1F8A65] rounded-full text-xs md:text-sm font-bold border border-[#1F8A65]/20 shadow-sm rotate-sticker-right flex items-center gap-2">
+          <i class="fa-solid fa-language text-[#1F8A65]"></i> Lingüista Aplicada
         </span>
+      </div>
+
+      <div class="pt-4 flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+        <button onclick="openModal('modal-free-kit')" class="px-8 py-3.5 bg-[#1F8A65] hover:bg-[#186e51] text-white font-bold text-sm rounded-full shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2 cursor-pointer">
+          <i class="fa-solid fa-download"></i> Descargar Kit Gratuito CV ATS
+        </button>
+        <a href="#programas" class="px-8 py-3.5 bg-white hover:bg-slate-50 text-[#0A3B7A] font-bold text-sm rounded-full border border-slate-300 shadow-sm transition-all text-center">
+          Ver Programas
+        </a>
       </div>
 
     </div>
@@ -110,15 +126,15 @@
           </span>
           <h2 class="text-2xl md:text-3xl font-bold text-[#0A3B7A]">¡Hola! Soy Mely 👋</h2>
           <p class="text-xs md:text-sm text-slate-600 leading-relaxed font-medium">
-            Soy ingeniera, lingüista, marketer y estudiante de maestría en Trinity College Dublin. Mi objetivo con Melidan Academy es ayudarte a romper la barrera del idioma en entornos corporativos internacionales, brindándote herramientas estratégicas y sin perder tiempo en teoría innecesaria.
+            Soy ingeniera y lingüista aplicada realizando mi maestría en Trinity College Dublin. Yo también estuve en tus zapatos: sé exactamente la frustración de tener un perfil técnico sólido y sentir la barrera del idioma al postular a multinacionales. En Melidan Academy te doy las herramientas estratégicas sin rodeos para que destaques en el mercado global.
           </p>
 
           <div class="pt-2 flex flex-wrap gap-2.5">
-            <span class="px-3.5 py-1.5 bg-[#EBF2FA] text-[#0A3B7A] rounded-xl text-xs font-bold border border-[#0A3B7A]/15 flex items-center gap-1.5">
-              <span>🇬🇧</span> <span>IELTS C1 Certified</span>
+            <span class="px-3.5 py-1.5 bg-[#EBF2FA] text-[#0A3B7A] rounded-xl text-xs font-bold border border-[#0A3B7A]/15 flex items-center gap-2">
+              <i class="fa-solid fa-award text-[#0A3B7A]"></i> IELTS C1 Certified
             </span>
-            <span class="px-3.5 py-1.5 bg-[#E8F3EE] text-[#1F8A65] rounded-xl text-xs font-bold border border-[#1F8A65]/20 flex items-center gap-1.5">
-              <span>🇮🇹</span> <span>PLIDA B2 Certified</span>
+            <span class="px-3.5 py-1.5 bg-[#E8F3EE] text-[#1F8A65] rounded-xl text-xs font-bold border border-[#1F8A65]/20 flex items-center gap-2">
+              <i class="fa-solid fa-certificate text-[#1F8A65]"></i> PLIDA B2 Certified
             </span>
           </div>
         </div>
@@ -160,11 +176,11 @@
     </div>
   </section>
 
-  <section class="w-full bg-[#EBF2FA] px-6 py-12 md:py-20 flex justify-center border-b border-[#0A3B7A]/15">
+  <section id="programas" class="w-full bg-[#EBF2FA] px-6 py-12 md:py-20 flex justify-center border-b border-[#0A3B7A]/15">
     <div class="w-full max-w-4xl space-y-8">
       
       <div class="text-center">
-        <span class="text-xs md:text-sm font-extrabold uppercase tracking-widest text-[#0A3B7A]/70">LANZAMIENTO DICIEMBRE</span>
+        <span class="text-xs md:text-sm font-extrabold uppercase tracking-widest text-[#0A3B7A]/70">LANZAMIENTO 20 NOVIEMBRE</span>
         <h2 class="text-3xl md:text-4xl font-bold text-[#0A3B7A] mt-1">Nuestros Programas</h2>
       </div>
 
@@ -232,7 +248,7 @@
     <div class="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6">
       
       <div class="bg-white border border-slate-200 rounded-[28px] p-8 shadow-sm">
-        <span class="inline-block px-3 py-1 bg-slate-200 text-slate-700 text-xs font-bold rounded-full mb-4">ANTES</span>
+        <span class="inline-block px-3 py-1 bg-red-100 text-red-700 text-xs font-bold rounded-full mb-4">ANTES</span>
         <ul class="text-xs md:text-sm font-medium text-slate-600 space-y-3 leading-relaxed">
           <li>• Muchas ideas pero cero estructura al hablar inglés.</li>
           <li>• Miedo a tomar la palabra en reuniones de Teams/Zoom.</li>
@@ -316,7 +332,6 @@
     </div>
   </section>
 
-  <!-- NUEVA SECCIÓN DE YOUTUBE SHORTS -->
   <section class="w-full bg-[#EBF2FA] px-6 py-12 md:py-16 flex justify-center border-t border-[#0A3B7A]/15">
     <div class="w-full max-w-4xl space-y-8 text-center">
       
@@ -456,7 +471,7 @@
       <button onclick="closeModal('modal-waitlist')" class="absolute top-6 right-6 text-[#0A3B7A] font-bold text-lg hover:opacity-75 transition-opacity">✕</button>
 
       <span class="inline-block px-3.5 py-1 bg-amber-100 text-amber-900 text-xs font-extrabold rounded-full mb-3 border border-amber-200">
-        ⏳ APERTURA OFICIAL DICIEMBRE
+        ⏳ APERTURA OFICIAL 20 NOVIEMBRE
       </span>
       
       <h3 class="text-2xl font-bold text-[#0A3B7A] mb-1" id="waitlist-product-name">Estamos preparando este programa</h3>
@@ -520,7 +535,7 @@
       element.classList.toggle('active');
     }
 
-    const launchDate = new Date('December 1, 2026 00:00:00').getTime();
+    const launchDate = new Date('November 20, 2026 00:00:00').getTime();
 
     function updateCountdown() {
       const now = new Date().getTime();
