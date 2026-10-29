@@ -52,7 +52,7 @@
           <img 
             id="profile-img"
             src="./img1.png" 
-            alt="Melissa Alanis" 
+            alt="Mely Alanis" 
             class="w-full h-full object-cover rounded-full"
             onerror="handleImageError(this)"
           >
@@ -284,7 +284,7 @@
                 id="comment-program" 
                 class="w-full px-4 py-3 bg-[#FAF8F5] border border-slate-200 rounded-xl text-xs text-[#0A3B7A] focus:outline-none focus:border-[#1F8A65]"
               >
-                <option value="Tech Resume + STAR Guide">Tech Resume + STAR Guide</option>
+                <option value="Tech Resume & STAR Guide">Tech Resume & STAR Guide</option>
                 <option value="Corporate English Accelerator">Corporate English Accelerator</option>
                 <option value="Mentoría VIP 1:1">Mentoría VIP 1:1</option>
                 <option value="General">Consulta General</option>
@@ -311,6 +311,43 @@
             Enviar Comentario 💬
           </button>
         </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- NUEVA SECCIÓN DE YOUTUBE SHORTS -->
+  <section class="w-full bg-[#EBF2FA] px-6 py-12 md:py-16 flex justify-center border-t border-[#0A3B7A]/15">
+    <div class="w-full max-w-4xl space-y-8 text-center">
+      
+      <div class="space-y-2">
+        <span class="inline-block px-3 py-1 bg-white text-[#0A3B7A] text-xs font-bold uppercase tracking-wider rounded-full shadow-sm">
+          CONTENIDO EN CANAL
+        </span>
+        <h2 class="text-2xl md:text-4xl font-bold text-[#0A3B7A]">Aprende en YouTube Shorts</h2>
+        <p class="text-xs md:text-sm text-slate-600 font-medium max-w-xl mx-auto">
+          Estrategias de inglés corporativo, tips para tu CV y respuestas técnicas en menos de un minuto.
+        </p>
+      </div>
+
+      <div class="flex justify-center">
+        <div class="w-full max-w-[315px] aspect-[9/16] rounded-[28px] overflow-hidden shadow-2xl border-4 border-white bg-black">
+          <iframe 
+            class="w-full h-full"
+            src="https://www.youtube.com/embed/YpO5XATBzdI" 
+            title="Pasar de B1 a C1 en Inglés - IELTS"
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+      <div class="pt-2">
+        <a href="https://www.youtube.com/@melidanacademy/shorts" target="_blank" class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-bold text-xs px-6 py-3 rounded-full shadow-md transition-all transform hover:-translate-y-0.5">
+          <i class="fa-brands fa-youtube text-base"></i>
+          <span>Ver todos los Shorts en @melidanacademy ↗</span>
+        </a>
       </div>
 
     </div>
@@ -382,6 +419,7 @@
     <div class="flex justify-center space-x-8 text-[#0A3B7A] text-2xl">
       <a href="https://tiktok.com/@melidanacademy" target="_blank" class="hover:text-[#1F8A65] transition-colors"><i class="fa-brands fa-tiktok"></i></a>
       <a href="https://instagram.com/melidanacademy" target="_blank" class="hover:text-[#1F8A65] transition-colors"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.youtube.com/@melidanacademy/shorts" target="_blank" class="hover:text-[#1F8A65] transition-colors"><i class="fa-brands fa-youtube"></i></a>
     </div>
     <p class="text-xs font-semibold text-slate-500">© 2026 Melidan Academy · Todos los derechos reservados</p>
   </footer>
@@ -422,7 +460,7 @@
       </span>
       
       <h3 class="text-2xl font-bold text-[#0A3B7A] mb-1" id="waitlist-product-name">Estamos preparando este programa</h3>
-      <p class="text-xs text-slate-600 mb-6 font-medium">Únete a la lista de espera para asegurar tu cupo a precio de oferta en el lanzamiento oficial: <strong id="waitlist-price-tag" class="text-[#1F8A65] font-bold">18 €</strong>.</p>
+      <p class="text-xs text-slate-600 mb-6 font-medium">Únete a la lista de espera para asegurar tu cupo a solo <strong id="waitlist-price-tag" class="text-[#1F8A65] font-bold">18 €</strong> en el lanzamiento oficial.</p>
 
       <div class="grid grid-cols-4 gap-2 mb-6">
         <div class="bg-white p-3 rounded-2xl border border-slate-200 shadow-sm">
@@ -463,7 +501,7 @@
   </div>
 
   <script>
-    const STRIPE_PAYMENT_LINK = "https://buy.stripe.com/test_bJe7sE0yZ4hqcsGfvj77O00";
+    const STRIPE_PAYMENT_LINK = "https://buy.stripe.com/bJe8wQ0mZ2pX9Evaa7fw400";
 
     function buyProduct() {
       window.location.href = STRIPE_PAYMENT_LINK;
