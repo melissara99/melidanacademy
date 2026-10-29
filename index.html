@@ -170,7 +170,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         
-        <a href="#modal-free-kit" onclick="openModal('modal-free-kit')" class="block bg-[#E8F3EE] hover:bg-[#d8ebd2] border border-[#1F8A65]/30 p-6 rounded-[26px] transition-all transform hover:-translate-y-1 shadow-md">
+        <button onclick="openModal('modal-free-kit')" class="w-full text-left bg-[#E8F3EE] hover:bg-[#d8ebd2] border border-[#1F8A65]/30 p-6 rounded-[26px] transition-all transform hover:-translate-y-1 shadow-md cursor-pointer">
           <span class="flex items-center justify-between w-full">
             <span class="text-left pr-2 block">
               <span class="inline-block px-3 py-0.5 bg-[#1F8A65] text-white text-[10px] font-bold tracking-wider rounded-full mb-2">GRATIS</span>
@@ -179,7 +179,7 @@
             </span>
             <span class="text-2xl font-bold text-[#1F8A65] flex-shrink-0">+</span>
           </span>
-        </a>
+        </button>
 
         <button onclick="openWaitlistModal('Tech Resume & STAR Guide')" class="w-full text-left bg-white hover:bg-[#FAF8F5] border border-slate-200 p-6 rounded-[26px] transition-all transform hover:-translate-y-1 shadow-md cursor-pointer">
           <span class="flex items-center justify-between w-full">
@@ -315,23 +315,24 @@
 
   <div id="modal-free-kit" class="hidden fixed inset-0 bg-[#0A3B7A]/60 backdrop-blur-sm flex items-center justify-center p-4 z-50">
     <div class="bg-[#FAF8F5] border border-slate-200 p-8 rounded-[32px] max-w-md w-full relative text-left shadow-2xl">
-      <button onclick="closeModal('modal-free-kit')" class="absolute top-6 right-6 text-[#0A3B7A] font-bold text-lg">✕</button>
+      <button onclick="closeModal('modal-free-kit')" class="absolute top-6 right-6 text-[#0A3B7A] font-bold text-lg hover:opacity-75 transition-opacity">✕</button>
 
       <span class="inline-block px-3 py-1 bg-[#E8F3EE] text-[#1F8A65] text-xs font-extrabold rounded-full mb-3">GRATIS</span>
       <h3 class="text-2xl font-bold text-[#0A3B7A] mb-2">Obtén tu Kit Gratuito</h3>
       <p class="text-xs text-slate-600 mb-6 font-medium leading-relaxed">Ingresa tu correo para enviarte de inmediato la plantilla editable de CV ATS y la guía en PDF del método STAR.</p>
       
-      <form action="HTTPS_FORM_ENDPOINT" method="POST" class="space-y-4">
+      <form id="free-kit-form" class="space-y-4">
         <input 
           type="email" 
           name="email" 
           placeholder="tu.correo@ejemplo.com" 
           required 
-          class="w-full px-5 py-3.5 bg-white border border-slate-300 rounded-full text-xs text-[#0A3B7A] placeholder-slate-400 font-medium focus:outline-none focus:border-[#1F8A65]"
+          class="w-full px-5 py-3.5 bg-white border border-slate-300 rounded-full text-xs text-[#0A3B7A] placeholder-slate-400 font-medium focus:outline-none focus:border-[#1F8A65] transition-all"
         >
         <button 
           type="submit" 
-          class="w-full py-3.5 bg-[#0A3B7A] hover:bg-[#082e60] text-white font-bold text-xs rounded-full transition-colors shadow-md"
+          id="btn-submit-kit"
+          class="w-full py-3.5 bg-[#0A3B7A] hover:bg-[#082e60] text-white font-bold text-xs rounded-full transition-colors shadow-md cursor-pointer"
         >
           ¡Quiero mi Kit Gratuito 🚀!
         </button>
@@ -341,7 +342,7 @@
 
   <div id="modal-waitlist" class="hidden fixed inset-0 bg-[#0A3B7A]/60 backdrop-blur-sm flex items-center justify-center p-4 z-50">
     <div class="bg-[#FAF8F5] border border-slate-200 p-8 rounded-[32px] max-w-md w-full relative text-center shadow-2xl">
-      <button onclick="closeModal('modal-waitlist')" class="absolute top-6 right-6 text-[#0A3B7A] font-bold text-lg">✕</button>
+      <button onclick="closeModal('modal-waitlist')" class="absolute top-6 right-6 text-[#0A3B7A] font-bold text-lg hover:opacity-75 transition-opacity">✕</button>
 
       <span class="inline-block px-3.5 py-1 bg-amber-100 text-amber-900 text-xs font-extrabold rounded-full mb-3 border border-amber-200">
         ⏳ APERTURA OFICIAL DICIEMBRE
@@ -369,7 +370,7 @@
         </div>
       </div>
 
-      <form action="HTTPS_FORM_ENDPOINT" method="POST" class="space-y-3.5 text-left">
+      <form id="waitlist-form" class="space-y-3.5 text-left">
         <input 
           type="email" 
           name="email" 
@@ -379,7 +380,8 @@
         >
         <button 
           type="submit" 
-          class="w-full py-3.5 bg-[#1F8A65] hover:bg-[#186e51] text-white font-bold text-xs rounded-full transition-colors shadow-md"
+          id="btn-submit-waitlist"
+          class="w-full py-3.5 bg-[#1F8A65] hover:bg-[#186e51] text-white font-bold text-xs rounded-full transition-colors shadow-md cursor-pointer"
         >
           Unirme a la lista de espera + Descuento 🎁
         </button>
@@ -430,6 +432,82 @@
       } else if (img.src.includes('img1.PNG')) {
         img.src = './img2.jpg';
       }
+    }
+
+    var freeKitForm = document.getElementById('free-kit-form');
+
+    if (freeKitForm) {
+      freeKitForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        var emailInput = this.querySelector('input[type="email"]').value;
+        var btn = document.getElementById('btn-submit-kit');
+        var originalText = btn.innerText;
+
+        btn.innerText = 'Enviando... ⏳';
+        btn.disabled = true;
+
+        fetch('https://script.google.com/macros/s/AKfycbwSp8ks77cP18FOpJgWdyyLiRxuHKYH2-9mdJGUAIuB3LxGyCM4lW9XpVJuPhcuM98e/exec', {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: emailInput })
+        })
+        .then(function() {
+          btn.innerText = '¡Listo! Descargando... 🎉';
+          window.open('./kit-cv-ats.pdf', '_blank');
+
+          setTimeout(function() {
+            closeModal('modal-free-kit');
+            freeKitForm.reset();
+            btn.innerText = originalText;
+            btn.disabled = false;
+          }, 1500);
+        })
+        .catch(function(err) {
+          alert('Ocurrió un error al guardar tu correo. Por favor inténtalo de nuevo.');
+          btn.innerText = originalText;
+          btn.disabled = false;
+        });
+      });
+    }
+
+    var waitlistForm = document.getElementById('waitlist-form');
+
+    if (waitlistForm) {
+      waitlistForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        var emailInput = this.querySelector('input[type="email"]').value;
+        var productName = document.getElementById('waitlist-product-name').innerText;
+        var btn = document.getElementById('btn-submit-waitlist');
+        var originalText = btn.innerText;
+
+        btn.innerText = 'Registrando... ⏳';
+        btn.disabled = true;
+
+        fetch('https://script.google.com/macros/s/AKfycbwSp8ks77cP18FOpJgWdyyLiRxuHKYH2-9mdJGUAIuB3LxGyCM4lW9XpVJuPhcuM98e/exec', {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: emailInput, product: productName })
+        })
+        .then(function() {
+          btn.innerText = '¡Te has unido con éxito! 🎉';
+
+          setTimeout(function() {
+            closeModal('modal-waitlist');
+            waitlistForm.reset();
+            btn.innerText = originalText;
+            btn.disabled = false;
+          }, 1500);
+        })
+        .catch(function(err) {
+          alert('Ocurrió un error al guardar tu correo. Por favor inténtalo de nuevo.');
+          btn.innerText = originalText;
+          btn.disabled = false;
+        });
+      });
     }
   </script>
 
