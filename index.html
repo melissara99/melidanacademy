@@ -23,13 +23,18 @@
       <a href="#" class="flex items-center space-x-2">
         <span class="font-extrabold text-[#0A3B7A] text-sm tracking-wider">MELIDAN ACADEMY</span>
       </a>
-      <div class="flex items-center space-x-4 md:space-x-6 text-xs font-bold text-[#0A3B7A]">
+
+      <button id="menu-toggle" class="md:hidden text-[#0A3B7A] text-xl focus:outline-none cursor-pointer p-1">
+        <i class="fa-solid fa-bars" id="menu-icon"></i>
+      </button>
+
+      <div id="mobile-menu" class="hidden md:flex flex-col md:flex-row items-center space-y-3 md:space-y-0 space-x-0 md:space-x-6 text-xs font-bold text-[#0A3B7A] absolute md:static top-full left-0 w-full md:w-auto bg-white md:bg-transparent border-b md:border-none border-slate-200 p-6 md:p-0 shadow-lg md:shadow-none transition-all">
         <a href="#programa-estrellas" class="hover:text-[#1F8A65] transition-colors">🎓 Programas</a>
-        <a href="#transformacion" class="hidden md:inline-block hover:text-[#1F8A65] transition-colors">✨ Transformación</a>
-        <a href="#comentarios" class="hidden md:inline-block hover:text-[#1F8A65] transition-colors">💬 Dudas</a>
-        <a href="#youtube" class="hidden md:inline-block hover:text-[#1F8A65] transition-colors">📹 Youtube Shorts</a>
-        <a href="#faq" class="hidden md:inline-block hover:text-[#1F8A65] transition-colors">FAQ</a>
-        <a href="#testimonios" class="hidden md:inline-block hover:text-[#1F8A65] transition-colors">⭐ Testimonios</a>
+        <a href="#transformacion" class="hover:text-[#1F8A65] transition-colors">✨ Transformación</a>
+        <a href="#comentarios" class="hover:text-[#1F8A65] transition-colors">💬 Dudas</a>
+        <a href="#youtube" class="hover:text-[#1F8A65] transition-colors">📹 Youtube Shorts</a>
+        <a href="#faq" class="hover:text-[#1F8A65] transition-colors">FAQ</a>
+        <a href="#testimonios" class="hover:text-[#1F8A65] transition-colors">⭐ Testimonios</a>
         
         <a href="./tienda.html" class="px-4 py-2 bg-[#E8F3EE] text-[#1F8A65] rounded-full hover:bg-[#d8ebd2] transition-all flex items-center gap-2 border border-[#1F8A65]/20 shadow-sm">
           <i class="fa-solid fa-cart-shopping text-xs"></i>
@@ -608,7 +613,7 @@
             <span class="faq-icon text-lg font-bold text-[#0A3B7A] flex-shrink-0">+</span>
           </div>
           <div class="faq-answer hidden text-xs md:text-sm text-slate-600 font-medium leading-relaxed pt-3">
-            Una vez registrado, tendrás acceso a mi calendario directo para agendar tus sesiones individuales por Zoom. En estas sesiones personalizadas revisamos a fondo tu CV adaptado a filtros ATS, realizamos simulacros de entrevista con el método STAR y ajustamos tu pronunciación ejecutiva en tiempo real.
+            Una vez registrado, tendrás acceso al calendario directo para agendar tus sesiones individuales por Zoom. En estas sesiones personalizadas revisamos a fondo tu CV adaptado a filtros ATS, realizamos simulacros de entrevista con el método STAR y ajustamos tu pronunciación ejecutiva en tiempo real.
           </div>
         </div>
 
@@ -817,7 +822,7 @@
       <div class="text-xs text-slate-600 font-medium space-y-3 leading-relaxed">
         <p><strong>1. Uso de Materiales y Licencia:</strong> Todos los cursos, guías, plantillas en Notion y recursos en PDF son para uso estrictamente personal. Queda prohibida la reventa o comercialización no autorizada de los materiales.</p>
         <p><strong>2. Entrega de Productos Digitales:</strong> La descarga de productos digitales en PDF o plantillas es inmediata a través del enlace generado tras completar el pago seguro con Stripe.</p>
-        <p><strong>3. Programas y Mentorías:</strong> El acceso a los programas grabados y agendamiento de sesiones 1:1 se realiza mediante correo electrónico de confirmación tras registrarse.</p>
+        <p><strong>3. Programas y Mentorías:</strong> El acceso al programa grabado y agendamiento de sesiones 1:1 se realiza mediante correo electrónico de confirmación tras registrarse.</p>
         <p><strong>4. Privacidad de Datos:</strong> Los datos recolectados a través de nuestros formularios (correo electrónico y nombres) se utilizan exclusivamente para la entrega del material solicitado y comunicaciones oficiales de Melidan Academy.</p>
       </div>
 
@@ -828,6 +833,34 @@
       </div>
     </div>
   </div>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        if (mobileMenu.classList.contains('hidden')) {
+          menuIcon.classList.remove('fa-xmark');
+          menuIcon.classList.add('fa-bars');
+        } else {
+          menuIcon.classList.remove('fa-bars');
+          menuIcon.classList.add('fa-xmark');
+        }
+      });
+
+      const navLinks = mobileMenu.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          menuIcon.classList.remove('fa-xmark');
+          menuIcon.classList.add('fa-bars');
+        });
+      });
+    }
+  </script>
 
   <script src="./main.js"></script>
 </body>
